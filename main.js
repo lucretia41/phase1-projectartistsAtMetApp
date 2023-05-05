@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", function() {
+    console.log('The DOM has loaded');
+});
+
+console.log("this loads the dom");
+
+
 console.log("works")
 fetch("http:localhost:3000/artworks")
     .then(response => response.json())
