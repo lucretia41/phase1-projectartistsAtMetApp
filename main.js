@@ -1,22 +1,40 @@
-console.log("works")
-fetch("http:localhost:3000/artworks")
-    .then(response => response.json())
-    .then(artworks => {
-        const container = document.querySelector("ul#artworkList");
-        //   artworks.forEach(artwork => {
-        //   })
-
-        //   });
-    })
-
-fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (title) {
-        console.log(title);
-
+document.addEventListener("DOMContentLoaded", () => {
+    const addBtn = document.querySelector("#new-toy-btn");
+    const toyFormContainer = document.querySelector(".container");
+    addBtn.addEventListener("click", () => {
+        // hide & seek with the form
+        addToy = !addToy;
+        if (addToy) {
+            toyFormContainer.style.display = "block";
+        } else {
+            toyFormContainer.style.display = "none";
+        }
     });
+});
+
+
+
+
+
+// console.log("works")
+// fetch("http:localhost:3000/artworks")
+//     .then(response => response.json())
+//     .then(artworks => {
+//         const container = document.querySelector("ul#artworkList");
+//         //   artworks.forEach(artwork => {
+//         //   })
+
+//         //   });
+//     })
+
+// fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
+//     .then(function (response) {
+//         return response.json();
+//     })
+//     .then(function (title) {
+//         console.log(title);
+
+//     });
 // fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects/[objectID]")
 //     .then(function (response) {
 //         return response.json();
@@ -33,7 +51,7 @@ fetch("https://collectionapi.metmuseum.org/public/collection/v1/objects")
 //         console.log(objectsIDs);
 //     });
 
-fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=vincent van gogh")
+fetch("https://collectionapi.metmuseum.org/public/collection/v1/search?isOnView=true&q=van gogh")
     .then(function (res) {
         return res.json();
     })

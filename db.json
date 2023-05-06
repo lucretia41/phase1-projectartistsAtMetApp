@@ -1,6 +1,19 @@
 {
   "artworks": [
     {
+      "id": "1",
+      "objectID": 45734,
+      "isHighlight": false,
+      "accessionNumber": "36.100.45",
+      "primaryImage": "https://images.metmuseum.org/CRDImages/as/original/DP251139.jpg",
+      "primaryImageSmall": "https://images.metmuseum.org/CRDImages/as/web-large/DP251139.jpg",
+      "objectName": "Hanging scroll",
+      "title": "Quail and Millet",
+      "artistDisplayName": "Kiyohara Yukinobu"
+    },
+
+    {
+      "id": "2",
       "objectID": 45734,
       "isHighlight": false,
       "accessionNumber": "36.100.45",
@@ -87,6 +100,7 @@
       "GalleryNumber": ""
     },
     {
+      "id": "3",
       "objectID": 45734,
       "isHighlight": false,
       "accessionNumber": "36.100.45",
@@ -173,6 +187,7 @@
       "GalleryNumber": ""
     },
     {
+      "id": "4",
       "objectID": 45734,
       "isHighlight": false,
       "accessionNumber": "36.100.45",
@@ -259,6 +274,7 @@
       "GalleryNumber": ""
     },
     {
+      "id": "5",
       "objectID": 45734,
       "isHighlight": false,
       "accessionNumber": "36.100.45",
@@ -343,6 +359,14 @@
       "objectWikidata_URL": "https://www.wikidata.org/wiki/Q29910832",
       "isTimelineWork": false,
       "GalleryNumber": ""
+    },
+
+    {
+      "id": "6",
+      "isHighlight": true,
+      "artistDisplayName": "Rembrandt van Rijn",
+      "objectID": "234234",
+      "primaryImageSmall": "https://www.metmuseum.org/art/collection/search/437397?high=on&amp;ao=on&amp;od=on&amp;ft=rembrandt&amp;offset=0&amp;rpp=40&amp;pos=2"
     }
   ]
 }
