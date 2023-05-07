@@ -24,8 +24,10 @@ function renderOneArtist(artist){
  function getAllArtists(){
     fetch('http://localhost:3000/artworks') 
         .then(res => res.json())
-        .then(artworks => console.log(artworks))
- }
+        .then(artworks => artworks.forEach(artworks => renderOneArtist(artworks)))
+            
+        }
+ 
    
 // {/* }get data and render artists to dom*/}
 
