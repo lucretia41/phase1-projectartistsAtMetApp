@@ -12,32 +12,29 @@
 </head>
 
 <body>
-    <ul id="artworkList" class="menu-art">
-        <li>"vangogh"</li>
-        <li>"rembrandt"</li>
-        <li>"degas"</li>
-    </ul>
-    <nav></nav>
+  
     <div id="artists-header">
         <img src="https://images.metmuseum.org/CRDImages/as/original/DP251138.jpg" alt=" artists-header" />
     </div>
 
-    <!-- <div id="container"><img src="https://images.metmuseum.org/CRDImages/as/original/DP251138.jpg" " alt=" print">
+    <!-- <div id="container"><img src="https://images.metmuseum.org/CRDImages/as/original/DP251138.jpg" " alt=" print"> -->
 
-    </div> -->
+    </div>
 
     <div class="container">
-        <form class="add-toy-form">
-            <h3>Create a toy!</h3>
-
-            <input type="text" name="name" value="" placeholder="Enter a toy's name..." class="input-text" />
-            <br />
-            <input type="text" name="image" value="" placeholder="Enter a toy's image URL..." class="input-text" />
-            <br />
-            <input type="submit" name="submit" value="Create Toy" class="submit" />
+        <form class="artist-form">
+            <label for="name">Name</label>
+            <input type="text id="name" name=""name> />
+            <label for="name">Image URL</label>
+            <input type="text" id="image_url" name="image_url" />
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+            <button type="submit">Artist</button>
         </form>
+        <ul id="artist-list" class="cards">
+            <!-- artists here -->
+        </ul>
     </div>
-    <button></button>
 
 
 </body>
