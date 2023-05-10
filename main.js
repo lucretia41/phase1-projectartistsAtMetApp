@@ -1,41 +1,42 @@
-function renderOneArtist(artist){
-    //Build Artist
-    let card = document.createElement('li')
-    card.className = 'card'
-    card.innerHTML = `
-   <img src="${artist.imageUrl}" 
-    <div class="content">
-    <h4>${artist.name}</h4>
-    <p>
-        $<span class="count">${artist.donations}</span> Donated
-    </p>
-    <p>${artist.description}</p>
-    </div>
-    <div class="buttons">
-        <button> Donate $10 </button>
-        <button> Set Fee</button>
-    </div>
-`
-    {/* add artist to dom */}
+// function renderOneArtist(artworks){
+//     //Build Artist
+//     let card = document.createElement('li')
+//     card.className = 'card'
+//     card.innerHTML = `
+//    <img src="${artworks.imageUrl}" 
+//     <div class="content">
+//     <h4>${artworks.name}</h4>
+//     <p>
+//         $<span class="count">${artworks.donations}</span> Donated
+//     </p>
+//     <p>${artworks.description}</p>
+//     </div>
+//     <div class="buttons">
+//         <button> Donate $10 </button>
+//         <button> Set Fee</button>
+//     </div>
+// `
+    // {/* add artist to dom */}
 
-    document.querySelector('#artist-list').appendChild(card)
-}
+//     document.querySelector('#artist-list').appendChild(card)
+// }
    
- function getAllArtists(){
-    fetch('http://localhost:3000/artworks') 
-        .then(res => res.json())
-        .then(artworks => artworks.forEach(artworks => renderOneArtist(artworks)))
+//  function getAllArtists(){
+//     fetch('http://localhost:3000/artworks') 
+//         .then(res => res.json())
+//         .then(artworks => artworks.forEach(artist => renderOneArtist(artist)))
+//         //    .then(data => console.log(data))
             
-        }
+//         }
  
    
-// {/* }get data and render artists to dom*/}
+// // {/* }get data and render artists to dom*/}
 
-function initialize(){
-    getAllArtists()
-    console.log("get all artists")
-}
-initialize()
+// function initialize(){
+//     getAllArtists()
+//     // console.log("get all artists")
+// }
+// initialize()
 
 
 
