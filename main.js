@@ -1,26 +1,28 @@
-// function renderOneArtist(artworks){
-//     //Build Artist
-//     let card = document.createElement('li')
-//     card.className = 'card'
-//     card.innerHTML = `
-//    <img src="${artworks.imageUrl}" 
-//     <div class="content">
-//     <h4>${artworks.name}</h4>
-//     <p>
-//         $<span class="count">${artworks.donations}</span> Donated
-//     </p>
-//     <p>${artworks.description}</p>
-//     </div>
-//     <div class="buttons">
-//         <button> Donate $10 </button>
-//         <button> Set Fee</button>
-//     </div>
-// `
-    // {/* add artist to dom */}
+function renderOneArtist(artdata){
+    //Build Artist
+    let artcard = document.createElement('li')
+    artcard.className = 'artcard'
+    artcard.innerHTML = `
+   <img src="${artdata.image}" 
+    <div class="content">
+    <h4>${artworks.name}</h4>
+    <p>
+        $<span class="like-count">${artdata.likes}</span> Liked
+    </p>
+    <p>${artdata.description}</p>
+    </div>
+    
+`
+    {/* add artist to dom */}
 
-//     document.querySelector('#artist-list').appendChild(card)
-// }
+    document.querySelector('li').appendChild(artcard)
+}
+   console.log(artcard)
    
+   function initialize(){
+    artdata.forEach(artdata => renderOneArtist(artdata))
+   }
+   initialize()
 //  function getAllArtists(){
 //     fetch('http://localhost:3000/artworks') 
 //         .then(res => res.json())
