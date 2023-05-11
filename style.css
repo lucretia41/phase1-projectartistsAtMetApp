@@ -75,8 +75,8 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-/* body {
-  background-color: rgb(206, 238, 112);
+/* /* body { */
+/* background-color: rgb(206, 238, 112);
 }
 
 #artists-header {
@@ -91,13 +91,9 @@
 #artists-header img {
   height: 6rem;
   width: auto;
-}
+} */
 
-#toy-collection {
-  margin: 2rem;
-}
-
-.card {
+.artcard {
   text-align: center;
   border: grey solid 1px;
   padding: 1rem;
@@ -106,12 +102,6 @@
   display: inline-grid;
   margin: 1rem 2rem;
   box-shadow: 3px 4px #c84049;
-}
-
-.toy-avatar {
-  justify-self: center;
-  height: 12rem;
-  width: auto;
 }
 
 button {
@@ -132,12 +122,12 @@ button:hover {
   color: #e04b52;
 }
 
-.container {
+.artcontainer {
   padding: 1rem;
   width: stretch;
   height: auto;
   display: none;
-  background: #c6559a;
+  background: #1cce1c;
   opacity: 0.8;
 }
 
@@ -147,7 +137,7 @@ button:hover {
 
 .submit {
   position: relative;
-  background-color: #0b0523;
+  background-color: #4424c4;
   border-radius: 5px;
   height: 2rem;
   width: max-content;
@@ -171,4 +161,4 @@ button:hover {
   font-size: 18px;
   font-family: monospace;
   margin: 3px;
-} */
+}

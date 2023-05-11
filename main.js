@@ -1,44 +1,47 @@
-function renderOneArtist(artdata){
+
+
+
+function renderOneArtist(artwork) {
     //Build Artist
+
+               
     let artcard = document.createElement('li')
     artcard.className = 'artcard'
     artcard.innerHTML = `
    <img src="${artdata.image}" 
     <div class="content">
-    <h4>${artworks.name}</h4>
+    <h4>${artdata.name}</h4>
     <p>
-        $<span class="like-count">${artdata.likes}</span> Liked
+        $<span class="like-count">${artwork.likes}</span> Liked
     </p>
     <p>${artdata.description}</p>
-    </div>
-    
-`
-    {/* add artist to dom */}
+    </div> `
 
-    document.querySelector('li').appendChild(artcard)
+    {/* add artist to dom */}
+    // console.log(artcard)
+    
+    document.querySelector('#artist-list').appendChild(artcard)
 }
-   console.log(artcard)
-   
-   function initialize(){
-    artdata.forEach(artdata => renderOneArtist(artdata))
-   }
-   initialize()
-//  function getAllArtists(){
-//     fetch('http://localhost:3000/artworks') 
-//         .then(res => res.json())
-//         .then(artworks => artworks.forEach(artist => renderOneArtist(artist)))
-//         //    .then(data => console.log(data))
-            
-//         }
+  console.log("hi from mainjs")
+  
+//    function initialize(){
+//     artdata.forEach(artist => renderOneArtist(artist))
+//    }
+//    initialize()
+ function getAllArtists() {
+    fetch('http://localhost:3000/artdata') 
+        .then(res => res.json())
+        .then(artdata =>  artdata.forEach(artwork => renderOneArtist(artwork)))
+
  
-   
+ }
 // // {/* }get data and render artists to dom*/}
 
-// function initialize(){
-//     getAllArtists()
-//     // console.log("get all artists")
-// }
-// initialize()
+function initialize(){
+    getAllArtists()
+    // console.log("get all artists")
+}
+initialize()
 
 
 
