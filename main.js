@@ -8,17 +8,17 @@ function renderOneArtist(artwork) {
     let artcard = document.createElement('li')
     artcard.className = 'artcard'
     artcard.innerHTML = `
-   <img src="${artdata.image}" 
+   <img src="${artwork.imageURL}">
     <div class="content">
-    <h4>${artdata.name}</h4>
+    <h4>${artwork.name}</h4>
     <p>
         $<span class="like-count">${artwork.likes}</span> Liked
     </p>
-    <p>${artdata.description}</p>
+    <p>${artwork.title}</p>
     </div> `
 
     {/* add artist to dom */}
-    // console.log(artcard)
+    console.log(artcard)
     
     document.querySelector('#artist-list').appendChild(artcard)
 }
