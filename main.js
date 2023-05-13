@@ -112,25 +112,25 @@ function getAllArtists() {
         .then(res => res.json())
         .then(artdata => artdata.forEach(artwork => renderOneArtist(artwork)))
 
-    function addGlow(div1) {
+    function addGlow(img) {
         const colors = ["red", "green", "yellow", "blue"];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        div1.style.borderColor = randomColor;
-        div1.style.borderWidth = '5px';
-        div1.style.borderStyle = 'solid';
-        div1.style.transition = 'border-color 0.5s, border-width 0.5s';
+        img.style.borderColor = randomColor;
+        img.style.borderWidth = '5px';
+        img.style.borderStyle = 'solid';
+        img.style.transition = 'border-color 0.5s, border-width 0.5s';
 
         setTimeout(() => {
-            div1.style.borderColor = '';
-            div1.style.borderWidth = '';
-            div1.style.borderStyle = '';
-            div1.style.transition = '';
+            img.style.borderColor = '';
+            img.style.borderWidth = '';
+            img.style.borderStyle = '';
+            img.style.transition = '';
 
             // const card = document.getElementsByClassName("artcard");
             // for (const artcard of card) {
             //     artcard.addEventListener("mouseover", addGlow("artcard"));
             // }
-            addGlow()
+            addGlow(img)
             const glow = document.getElementsByClassName("artcard");
             // glow.addEventListener("mouseover", addGlow());
         }, 1000);
@@ -155,7 +155,32 @@ initialize()
     console.log("this loads the dom");
 
 }
+const divs = document.querySelectorAll('div')
 
+addGlobalEventListener("mouseover", "div", e => {
+    const colors = ["red", "green", "yellow", "blue"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    divs.style.borderColor = randomColor;
+    divs.style.borderWidth = '5px';
+    divs.style.borderStyle = 'solid';
+    divs.style.transition = 'border-color 0.5s, border-width 0.5s';
+
+    setTimeout(() => {
+        divs.style.borderColor = '';
+        divs.style.borderWidth = '';
+        divs.style.borderStyle = '';
+        divs.style.transition = '';
+
+    })
+},
+
+    function addGlobalEventListener(type, selector, callback) {
+        document.addEventListener(type, e => {
+            if (e.target.matches(selector)) callback(e)
+        })
+    }
+
+)
 
 // const image = document.querySelector("#artist-list");
 // function toggleGlow() {
