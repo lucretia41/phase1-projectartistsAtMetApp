@@ -86,10 +86,10 @@ function renderOneArtist(artwork) {
     artcard.className = 'artcard'
     artcard.innerHTML = `
    <img src="${artwork.imageURL}">
-    <div class="content">
-    <h4>${artwork.name}</h4>
+    <div>
+    <h4>${artwork.artistName}</h4>
     <p>
-        $<span class="like-count">${artwork.likes}</span> Liked
+        <span class="like-count">${artwork.likes}</span> Liked
     </p>
     <p>${artwork.title}</p>
     </div> `
@@ -112,26 +112,26 @@ function getAllArtists() {
         .then(res => res.json())
         .then(artdata => artdata.forEach(artwork => renderOneArtist(artwork)))
 
-    function addGlow(img) {
+    function addGlow(div) {
         const colors = ["red", "green", "yellow", "blue"];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        img.style.borderColor = randomColor;
-        img.style.borderWidth = '5px';
-        img.style.borderStyle = 'solid';
-        img.style.transition = 'border-color 0.5s, border-width 0.5s';
+        div.style.borderColor = randomColor;
+        div.style.borderWidth = '5px';
+        div.style.borderStyle = 'solid';
+        div.style.transition = 'border-color 0.5s, border-width 0.5s';
 
         setTimeout(() => {
-            img.style.borderColor = '';
-            img.style.borderWidth = '';
-            img.style.borderStyle = '';
-            img.style.transition = '';
+            div.style.borderColor = '';
+            div.style.borderWidth = '';
+            div.style.borderStyle = '';
+            div.style.transition = '';
 
             // const card = document.getElementsByClassName("artcard");
             // for (const artcard of card) {
             //     artcard.addEventListener("mouseover", addGlow("artcard"));
             // }
-            addGlow(img)
-            const glow = document.getElementsByClassName("artcard");
+            addGlow(div)
+            // const glow = document.getElementsByClassName("artcard");
             // glow.addEventListener("mouseover", addGlow());
         }, 1000);
     }
@@ -155,32 +155,33 @@ initialize()
     console.log("this loads the dom");
 
 }
-const divs = document.querySelectorAll('div')
+// const divs = document.querySelectorAll('div')
 
-addGlobalEventListener("mouseover", "div", e => {
-    const colors = ["red", "green", "yellow", "blue"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    divs.style.borderColor = randomColor;
-    divs.style.borderWidth = '5px';
-    divs.style.borderStyle = 'solid';
-    divs.style.transition = 'border-color 0.5s, border-width 0.5s';
+// addGlobalEventListener("mouseover", "div", e => {
+//     const colors = ["red", "green", "yellow", "blue"];
+//     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+//     divs.style.borderColor = randomColor;
+//     divs.style.borderWidth = '5px';
+//     divs.style.borderStyle = 'solid';
+//     divs.style.transition = 'border-color 0.5s, border-width 0.5s';
 
-    setTimeout(() => {
-        divs.style.borderColor = '';
-        divs.style.borderWidth = '';
-        divs.style.borderStyle = '';
-        divs.style.transition = '';
+//     setTimeout(() => {
+//         divs.style.borderColor = '';
+//         divs.style.borderWidth = '';
+//         divs.style.borderStyle = '';
+//         divs.style.transition = '';
 
-    })
-},
+//     })
+// },
 
-    function addGlobalEventListener(type, selector, callback) {
-        document.addEventListener(type, e => {
-            if (e.target.matches(selector)) callback(e)
-        })
-    }
+//     function addGlobalEventListener(type, selector, callback) {
+//         document.addEventListener(type, e => {
+//             if (e.target.matches(selector)) callback(e)
+//         })
+//     }
 
-)
+// )
+
 
 // const image = document.querySelector("#artist-list");
 // function toggleGlow() {
