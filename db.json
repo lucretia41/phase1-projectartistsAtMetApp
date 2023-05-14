@@ -1,5 +1,5 @@
 {
-  "artData": [
+  "artdata": [
     {
       "id": "1",
       "date": 1888,
@@ -160,7 +160,7 @@
       "imageURL": "https://images.metmuseum.org/CRDImages/ep/original/DP131000.jpg",
       "objectName": "Race Horses",
       "title": "Race Horses",
-      "artisName": "Edgar Degas",
+      "artistName": "Edgar Degas",
       "likes": 8
     }
   ]

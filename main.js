@@ -1,3 +1,87 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//     console.log('The DOM has loaded');
+// });
+
+
+// fetch("http://localhost:3000/artData")
+//     .then(res => res.json())
+//     .then(artData => {
+//         artistsDisplay(artData),
+//             showCaseArtist([0]),
+//             console.log(artData)
+//     })
+
+// const artistDisplay = document.querySelector("#artists-display")
+
+// // const artistName = document.querySelector("name")
+// // const artistdate = document.querySelector("date")
+// // const artistImage = document.querySelector(".detail-image")
+// // const artistTitle = document.querySelector("title")
+
+// function artistsDisplay(artData) {
+//     artData.forEach(artwork => {
+//         const eachArtist = document.createElement("img")
+//         eachArtist.src = artistImage
+//         artistDisplay.appendChild(eachArtist)
+//         eachArtist.addEventListener('click', event => {
+//             showCaseArtist(artwork)
+//         })
+//         eachArtist.addEventListener('mouseover', event => {
+//             addGlow(event, eachArtist)
+//         })
+
+//     });
+// }
+// function addGlow(event, artistImage) {
+//     const colors = ['red', 'blue', 'yellow', 'green'];
+//     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+//     artistImage.style.borderColor = randomColor;
+//     artistImage.style.borderWidth = '5px';
+//     artistImage.style.borderStyle = 'solid';
+//     artistImage.style.transiton = 'border-color 0.5s, border-width 0.5s';
+
+//     setTimeout(() => {
+//         artistImage.style.borderColor = '';
+//         artistImage.style.borderWidth = '';
+//         artistImage.style.borderStyle = '';
+//         artistImage.style.transiton = '';
+
+//     }, 1000);
+// }
+
+// function addGlowToMainArtists(event, artistImage) {
+//     const colors = ['red', 'blue', 'yellow', 'green'];
+//     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+//     artistImage.style.borderColor = randomColor;
+//     artistImage.style.borderWidth = '5px';
+//     artistImage.style.borderStyle = 'solid';
+//     artistImage.style.transiton = 'border-color 0.5s, border-width 0.5s';
+
+// }
+
+// function showCaseArtist() {
+//     artistName.textContent = artist.artistName
+//     artistdate.textContent = artist.date
+//     artistImage.src = artistImage
+//     artistImage.addEventListener('mouseover', event => {
+//         addGlowToMainArtists(event, artistImage);
+
+//     })
+// }
+
+// console.log()
+
+
+
+
+
+
+
+
+
+
 // const renderCards = (artData) => {
 //     const cardContainer = document.getElementById("card-container");
 //     artData.forEach((cardInfo) => {
@@ -10,7 +94,7 @@
 //         name.textContent = cardInfo.name
 //         date.textContent = "1860"
 
-//         imgConatiner.append(img, name, date)
+//         imgContainer.append(img, name, date)
 
 //         img.src = cardInfo.image;
 //         img.addEventListener("click", (event) => {
@@ -79,10 +163,10 @@ const card = document.getElementById("card")
 
 
 function renderOneArtist(artwork) {
-    //Build Artist
+    // Build Artist
 
 
-    let artcard = document.createElement('li')
+    const artcard = document.createElement('li')
     artcard.className = 'artcard'
     artcard.innerHTML = `
    <img src="${artwork.imageURL}">
@@ -92,6 +176,8 @@ function renderOneArtist(artwork) {
         <span class="like-count">${artwork.likes}</span> Liked
     </p>
     <p>${artwork.title}</p>
+    <p>${artwork.date}</p>
+
     </div> `
 
 
@@ -99,44 +185,22 @@ function renderOneArtist(artwork) {
     {/* add artist to dom */ }
     console.log(artcard)
 
-    document.querySelector('#artist-list').appendChild(artcard)
+    document.querySelector('#artist-list').append(artcard)
 }
 console.log("hi from mainjs")
 
-function initialize() {
-    artdata.forEach(artist => renderOneArtist(artist))
-}
-initialize()
+// function initialize() {
+//     artdata.forEach(artist => renderOneArtist(artist))
+// }
+// initialize()
 function getAllArtists() {
     fetch('http://localhost:3000/artdata')
         .then(res => res.json())
         .then(artdata => artdata.forEach(artwork => renderOneArtist(artwork)))
 
-    function addGlow(div) {
-        const colors = ["red", "green", "yellow", "blue"];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        div.style.borderColor = randomColor;
-        div.style.borderWidth = '5px';
-        div.style.borderStyle = 'solid';
-        div.style.transition = 'border-color 0.5s, border-width 0.5s';
-
-        setTimeout(() => {
-            div.style.borderColor = '';
-            div.style.borderWidth = '';
-            div.style.borderStyle = '';
-            div.style.transition = '';
-
-            // const card = document.getElementsByClassName("artcard");
-            // for (const artcard of card) {
-            //     artcard.addEventListener("mouseover", addGlow("artcard"));
-            // }
-            addGlow(div)
-            // const glow = document.getElementsByClassName("artcard");
-            // glow.addEventListener("mouseover", addGlow());
-        }, 1000);
-    }
 }
-// {/* }get data and render artists to dom*/}
+
+// {/* }get data and render artists to dom*/ }
 
 function initialize() {
     getAllArtists()
@@ -150,37 +214,44 @@ initialize()
 {
     document.addEventListener("DOMContentLoaded", function () {
         console.log('The DOM has loaded');
+        // const createButton = document.createElement("button")
+        // createButton.innerText = 'like'
+        // document.body.append(createButton);
+        // document.getElementById("button").addEventListener("click", function () {
+        //     alert("click")
+        // })
     });
 
     console.log("this loads the dom");
 
 }
-// const divs = document.querySelectorAll('div')
+const divs = document.querySelectorAll('div')
+const addGlobalEventListener = document
 
-// addGlobalEventListener("mouseover", "div", e => {
-//     const colors = ["red", "green", "yellow", "blue"];
-//     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-//     divs.style.borderColor = randomColor;
-//     divs.style.borderWidth = '5px';
-//     divs.style.borderStyle = 'solid';
-//     divs.style.transition = 'border-color 0.5s, border-width 0.5s';
+addGlobalEventListener("mouseover", "div", event => {
+    const colors = ["red", "green", "yellow", "blue"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    divs.style.borderColor = randomColor;
+    divs.style.borderWidth = '5px';
+    divs.style.borderStyle = 'solid';
+    divs.style.transition = 'border-color 0.5s, border-width 0.5s';
 
-//     setTimeout(() => {
-//         divs.style.borderColor = '';
-//         divs.style.borderWidth = '';
-//         divs.style.borderStyle = '';
-//         divs.style.transition = '';
+    setTimeout(() => {
+        divs.style.borderColor = '';
+        divs.style.borderWidth = '';
+        divs.style.borderStyle = '';
+        divs.style.transition = '';
 
-//     })
-// },
+    })
+},
 
-//     function addGlobalEventListener(type, selector, callback) {
-//         document.addEventListener(type, e => {
-//             if (e.target.matches(selector)) callback(e)
-//         })
-//     }
+    function addGlobalEventListener(type, selector, callback) {
+        document.addEventListener(type, event => {
+            if (e.target.matches(selector)) callback(event)
+        })
+    }
 
-// )
+)
 
 
 // const image = document.querySelector("#artist-list");
@@ -190,8 +261,8 @@ initialize()
 // image.addEventListener("click", toggleGlow);
 
 
-// console.log("works")
-// }
+console.log("works")
+
 
 // function addGlow(card) {
 //     const colors = ["red", "green", "yellow", "blue"];
@@ -221,8 +292,44 @@ initialize()
 // glow.addEventListener("mouseover", addGlow());
 
 
+// function addGlow(div) {
+//     "mouseover", e => {
+//         function addGlobalEventListener(type, selector, callback) {
+//             document.addEventListener(type, e => {
+//                 if (e.target.matches(selector)) callback(e)
+//             })
+//         }
 
+//     }
+//     const colors = ["red", "green", "yellow", "blue"];
+//     const randomColor = colors[Math.floor(Math.random() * colors.length)];
+//     div.style.borderColor = randomColor;
+//     div.style.borderWidth = '5px';
+//     div.style.borderStyle = 'solid';
+//     div.style.transition = 'border-color 0.5s, border-width 0.5s';
 
+//     setTimeout(() => {
+//         div.style.borderColor = '';
+//         div.style.borderWidth = '';
+//         div.style.borderStyle = '';
+//         div.style.transition = '';
+
+//         const card = document.getElementsByClassName("artcard");
+//         for (const artcard of card) {
+//             artcard.addEventListener("mouseover", addGlow("artcard"));
+//         }
+//         addGlow(div)
+//         const glow = document.getElementsByClassName("artcard");
+//         glow.addEventListener("mouseover", addGlow());
+//     }, 1000);
+// }
+// console.log(addGlow)
+
+// function addGlobalEventListener(type, selector, callback) {
+//     document.addEventListener(type, e => {
+//         if (e.target.matches(selector)) callback(e)
+//     })
+// }
 
 
 //         fetch("http:localhost:3000/artworks")
